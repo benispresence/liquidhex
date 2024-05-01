@@ -2,12 +2,11 @@
 pragma solidity ^0.8.25;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 
-contract LiquidHEX is ERC20, ERC20Permit {
+contract LiquidHEX is ERC20 {
     using ECDSA for bytes32;
     bytes32 public immutable merkleRoot;
     mapping(uint256 => bool) public hasClaimedId; // Tracks claimed IDs
@@ -15,8 +14,7 @@ contract LiquidHEX is ERC20, ERC20Permit {
     event Claimed(uint256 indexed id, address indexed account, uint256 amount, uint256 timestamp);
 
     constructor(bytes32 _merkleRoot)
-        ERC20("LiquidHEX", "LHEX")
-        ERC20Permit("LiquidHEX") {
+        ERC20("LiquidHEX", "LHEX") {
             merkleRoot = _merkleRoot;
     }
 
