@@ -1,6 +1,7 @@
 # Liquid HEX Solidity Contract
 
-This is the repository for the "Liquid HEX" smart contract, which will be deployed to Pulsechain. LiquidHEX.sol is the main contract that inherits the ERC20 implementation standards from OpenZeppelin. You can find the exact dependencies in the OpenZeppelin contracts, which are fully audited. LiquidHEX.sol introduces a sole claim function that depends on the Merkle root provided at the time of deployment. Here is how the claim function works:
+This is the repository for the "Liquid HEX" smart contract, which will be deployed to Pulsechain. LiquidHEX.sol is the main contract that inherits the ERC20 implementation standards from OpenZeppelin. You can find the exact dependencies in the OpenZeppelin contracts, which are fully audited:[OpenZeppelin Contracts Audit Report October 2023](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/audits/2023-10-v5.0.pdf)
+. LiquidHEX.sol introduces a sole claim function that depends on the Merkle root provided at the time of deployment. Here is how the claim function works:
 
 ### Claim Function Explanation
 
